@@ -13,8 +13,28 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let questions = [];
+let apiUrl = '';
+const numberOfQuestions = localStorage.getItem('numberOfQuestions');
+const category = localStorage.getItem('category');
+const difficulty = localStorage.getItem('difficulty');
 
-fetch("https://opentdb.com/api.php?amount=10&category=18&difficulty=easy").then(res =>{
+console.log(`${numberOfQuestions}, ${category}, ${difficulty}`);
+if(category === 'any' && difficulty === 'any'){
+    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestions}`;
+    console.log(apiUrl);
+}else if(category === 'any'){
+    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestion}&difficulty=${difficulty}`;
+    console.log(2);
+}else if(difficulty=== 'any'){
+    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestion}&category=${category}`;
+    console.log(3);
+}else{
+    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestion}&category=${category}&difficulty = ${difficulty}`;
+    console.log(4);
+}
+
+
+fetch(apiUrl).then(res =>{
     return res.json();
 }).then(loadedQuestions =>{
     questions = loadedQuestions.results.map(loadedQuestion =>{
