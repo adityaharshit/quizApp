@@ -14,8 +14,8 @@ numberOfQuestions.addEventListener('keyup', () =>{
 startGame = (e) =>{
     e.stopPropagation();
     e.preventDefault();
-    if(numberOfQuestions.value < 1 || numberOfQuestions.value > 20) {
-        alert("Please enter a number between 1 and 20");
+    if(numberOfQuestions.value < 1 || numberOfQuestions.value > 50) {
+        alert("Please enter a number between 1 and 50");
         return;
     }
     localStorage.setItem('numberOfQuestions', numberOfQuestions.value);
