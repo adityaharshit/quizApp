@@ -23,13 +23,13 @@ if(category === 'any' && difficulty === 'any'){
     apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestions}`;
     console.log(apiUrl);
 }else if(category === 'any'){
-    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestion}&difficulty=${difficulty}`;
+    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestions}&difficulty=${difficulty}`;
     console.log(2);
 }else if(difficulty=== 'any'){
-    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestion}&category=${category}`;
+    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}`;
     console.log(3);
 }else{
-    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestion}&category=${category}&difficulty = ${difficulty}`;
+    apiUrl = `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty = ${difficulty}`;
     console.log(4);
 }
 
